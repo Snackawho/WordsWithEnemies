@@ -11,13 +11,10 @@ namespace WordsWithEnemies
         static void Main(string[] args)
         {
             Dictionary.Initialize();
-            List<char> temp = new List<char> {'o','m','a','r','n','o'};
-       
-            List<String> temp2 = Dictionary.ReturnWordsForList(temp);
-            foreach (String word in temp2)
-            {
-                Console.Write(word + " ");
-            }
+            Game game = new Game();
+            game.Begin();
+
+
             Console.ReadKey();
         }
     }

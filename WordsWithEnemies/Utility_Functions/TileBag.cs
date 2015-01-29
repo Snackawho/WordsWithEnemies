@@ -10,21 +10,31 @@ namespace WordsWithEnemies
     class TileBag
     {
         private List<Char> bag;
+        private int[] letterCount = { 9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1 };
 
         public TileBag()
         {
-            bag = new List<char> { 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a' 
-                                   ,'e','e','e','e','e','e','e','e','e','e','e','e'                                             
-                                   ,'i','i','i','i','i','i','i','i','i'
-                                   ,'o','o','o','o','o','o','o','o'
-                                   ,'n','n','n','n','n','n','r','r','r','r','r','r'
-                                   ,'t','t','t','t','t','t','l','l','l','l','s','s','s','s'
-                                   ,'u','u','u','u','d','d','d','d','g','g','g','b','b'
-                                   ,'c','c','m','m','p','p','f','f','h','h','v','v','w','w','y','y'
-                                   ,'k','j','x','q','z'                                             };
+            bag = new List<char> ();
+            FillBag();
+            ShuffleBag();
+        }
 
-           bag = Utility.ShuffleList<char>(bag);
-            
+        public void FillBag() {
+            bag.Clear();
+            int count = 0;
+            for (char letter = 'a'; letter < 'z'; letter++)
+            {
+                for (int i = 0; i < letterCount[count]; i++)
+                {
+                    bag.Add(letter);
+                }
+                count++;
+            }
+        }
+
+        public void ShuffleBag()
+        {
+            bag = Utility.ShuffleList<char>(bag);
         }
 
         public char Draw()

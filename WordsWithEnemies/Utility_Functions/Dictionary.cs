@@ -35,9 +35,17 @@ namespace WordsWithEnemies
             }
         }
 
-        public static Boolean CheckWord()
+        public static Boolean CheckWord(string word)
         {
-            return true;
+            if (Words.Contains(word))
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("This word does not exist. Try again");
+                return false;
+            }
         }
 
         public static List<String> ReturnWordsForList(List<char> letters)

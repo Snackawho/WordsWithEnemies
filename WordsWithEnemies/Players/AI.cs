@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace WordsWithEnemies
 {
-    class AI
+    class AI : Player
     {
+        public string difficulty {get; set;}
+
+        public AI() 
+        {
+
+        }
     }
 }
