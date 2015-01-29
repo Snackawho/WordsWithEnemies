@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace WordsWithEnemies
 {
-    class Program
+    class Player
     {
-        static void Main(string[] args)
-        {
-            Dictionary.Initialize();
-            Console.ReadKey();
-        }
     }
 }

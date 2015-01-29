@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Players\AI.cs" />
+    <Compile Include="Utility Functions\Dictionary.cs" />
+    <Compile Include="Game Flow\GameFlow.cs" />
+    <Compile Include="Players\Human.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility Functions\TileBag.cs" />
+    <Compile Include="Utility Functions\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

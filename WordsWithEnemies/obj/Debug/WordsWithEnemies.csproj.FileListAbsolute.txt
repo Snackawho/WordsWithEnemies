@@ -1,1 +1,6 @@
 C:\Development\WordsWithEnemies\WordsWithEnemies\bin\Debug\WordsWithEnemies.exe.config
+C:\Development\WordsWithEnemies\WordsWithEnemies\bin\Debug\WordsWithEnemies.exe
+C:\Development\WordsWithEnemies\WordsWithEnemies\bin\Debug\WordsWithEnemies.pdb
+C:\Development\WordsWithEnemies\WordsWithEnemies\obj\Debug\WordsWithEnemies.csprojResolveAssemblyReference.cache
+C:\Development\WordsWithEnemies\WordsWithEnemies\obj\Debug\WordsWithEnemies.exe
+C:\Development\WordsWithEnemies\WordsWithEnemies\obj\Debug\WordsWithEnemies.pdb
