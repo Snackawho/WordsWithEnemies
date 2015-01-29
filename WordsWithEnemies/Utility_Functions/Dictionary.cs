@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WordsWithEnemies
 {
     class Dictionary
     {
-        private static HashSet<String> words;
- 
+        private static HashSet<String> Words;
+        private static List<String> words;
+
 
         public static void Initialize()
         {
@@ -18,8 +20,11 @@ namespace WordsWithEnemies
             {
                 using (StreamReader read = new StreamReader("twl06.txt"))
                 {
-                   String[] temp = read.ReadToEnd().Split(' ');
-                   words = new HashSet<string>(temp);
+                    Regex regex = new Regex(@"\b\r\n\b");
+                    String[] temp = regex.Split(read.ReadToEnd());
+                    Words = new HashSet<string>(temp);
+
+                    words = new List<string>(temp);
                 }
             }
             catch (Exception e)
@@ -35,9 +40,40 @@ namespace WordsWithEnemies
             return true;
         }
 
-        public static List<String> ReturnWordsForList()
+        public static List<String> ReturnWordsForList(List<char> letters)
         {
-            return null;
+            List<String> returnWords = new List<String>();
+
+            foreach (string word in words)
+            {
+                List<char> temp = new List<char>(letters);
+
+                
+                    for (int i = 0; i < word.Length; i++)
+                    {
+                        if (temp.Contains(word[i]))
+                        {
+                            for (int j = 0; j < temp.Count; j++)
+                            {
+                                if (temp[j] == word[i])
+                                {
+                                    temp.RemoveAt(j);
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        if (i == word.Length - 1)
+                        {
+                            returnWords.Add(word);
+                        }
+                    }
+            }
+          return returnWords;
         }
     }
 }
