@@ -39,9 +39,13 @@ namespace WordsWithEnemies
             ClearHand();
         }
 
-        public void RemoveFromHand()
+        public void RemoveFromHand(string word)
         {
-
+            for (int i = 0; i < word.Length; i++)
+            {
+                hand.Remove(word[i]);
+            }
         }
+
     }
 }

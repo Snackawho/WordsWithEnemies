@@ -30,17 +30,13 @@ namespace WordsWithEnemies
 
             } while (!(CheckLetters(new List<char>(userInput)) && Dictionary.CheckWord(userInput))); //Checks to see if the letters exist in hand and if the Word exists in the Dictionary
 
+            RemoveFromHand(userInput);
             return userInput;
         }
 
         private Boolean CheckLetters(List<char> userInput)
         {
-            var sb = new StringBuilder();
-            foreach (var c in userInput)
-            {
-                sb.Append(c);
-            }
-
+            string s = Utility.ConvCharListToString(userInput);
             List<char> tempList = new List<char>(hand);
             
             for (int i = 0; i < userInput.Count; i++)
@@ -59,7 +55,7 @@ namespace WordsWithEnemies
             }
             else
             {
-                Console.WriteLine("I am sorry but you cannot spell " + sb + " with your letters. Try again");
+                Console.WriteLine("I am sorry but you cannot spell " + s + " with your letters. Try again");
                 return false;
             }
                 

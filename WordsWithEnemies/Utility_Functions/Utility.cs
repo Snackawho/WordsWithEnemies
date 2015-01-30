@@ -21,6 +21,17 @@ namespace WordsWithEnemies
             }
 
             return list;
-        } 
+        }
+
+        public static string ConvCharListToString(List<char> letters)
+        {
+            var sb = new StringBuilder();
+            foreach (var c in letters)
+            {
+                sb.Append(c);
+            }
+
+            return sb.ToString();
+        }
     }
 }
